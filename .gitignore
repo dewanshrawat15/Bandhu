@@ -47,3 +47,4 @@ app.*.map.json
 
 secrets.dart
 sawo_keys.csv
+google-services.json

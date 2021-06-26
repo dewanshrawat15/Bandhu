@@ -7,10 +7,16 @@ import 'package:sawo/sawo.dart';
 import 'package:bandhu/utils/utils.dart';
 import 'package:bandhu/utils/colors.dart';
 import 'package:bandhu/utils/secrets.dart';
+import 'package:bandhu/utils/auth.dart';
 
 import 'package:bandhu/screens/HomeScreen.dart';
 
 class LoginScreen extends StatefulWidget {
+
+  final AuthHandlerState authHandlerState;
+  LoginScreen({
+    @required this.authHandlerState
+  });
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -72,12 +78,17 @@ class _LoginScreenState extends State<LoginScreen> {
     });
     _showDialog(false);
     await Future.delayed(Duration(seconds: 1));
-    print(user);
+    Map<String, dynamic> userData = {};
+    userData['email'] = user['identifier'];
+    userData['user_id'] = user['user_id'];
+    userData['created_on'] = DateTime.parse(user['created_on'].toString());
+    userData['name'] = user['customFieldInputValues']['Name'];
+    widget.authHandlerState.loginUser(userData);
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
         builder: (BuildContext context) => HomeScreen(
-          userDetails: user
+          userDetails: userData
         )
       )
     );
