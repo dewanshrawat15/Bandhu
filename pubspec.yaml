@@ -1,0 +1,27 @@
+name: bandhu
+description: A common platform for people to connect, talk, share, find verified COVID resources and discuss their problems, specifically during the COVID era
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  agora_rtc_engine: ^4.0.1
+  bottom_navy_bar: ^6.0.0
+  cupertino_icons: ^1.0.2
+  google_fonts:
+  permission_handler: ^6.0.0
+  sawo: ^0.1.0
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
