@@ -5,6 +5,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:bandhu/screens/GCchatScreen.dart';
+import 'package:bandhu/screens/ChecklistScreen.dart';
 import 'package:bandhu/screens/ThoughtScreen.dart';
 import 'package:bandhu/screens/QuoteScreen.dart';
 
@@ -40,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SizedBox.expand(
         child: PageView(
+          physics: NeverScrollableScrollPhysics(),
           controller: _pageController,
           onPageChanged: (index) => setState(() => _currentIndex = index),
           children: [
@@ -47,8 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
               userDetails: widget.userDetails
             ),
             ThoughtScreen(),
-            Icon(
-              Icons.check_box_outlined
+            ChecklistScreen(
+              userDetails: widget.userDetails
             ),
             Icon(
               Icons.fitness_center_rounded
