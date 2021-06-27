@@ -69,7 +69,7 @@ class WaterRecordsState extends State<WaterRecords> {
         await userWaterLogReference.collection("logs").doc(todaysDateTime).set(newRecord);
       }
     }
-    setState(() async {
+    setState(() {
       if (currentWaterCount < selectedGlasses) {
         currentWaterCount = currentWaterCount + 1;
 

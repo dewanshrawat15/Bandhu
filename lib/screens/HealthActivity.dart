@@ -1,3 +1,4 @@
+import 'package:bandhu/screens/YogaScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
@@ -34,7 +35,7 @@ class _HealthActivityState extends State<HealthActivity> {
             children: [
               spacer(size.height * 0.05, 0, null),
               Text(
-                "Activity",
+                "Health",
                 style: GoogleFonts.montserrat(
                   fontWeight: FontWeight.w700,
                   fontSize: 32,
@@ -112,6 +113,44 @@ class _HealthActivityState extends State<HealthActivity> {
                       ),
                       child: Text(
                         "Click here to update and maintain your pedometer logs",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w300
+                        )
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              spacer(20, 0, null),
+              Card(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 9,
+                    vertical: 20
+                  ),
+                  child: ListTile(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => YogaScreen()
+                        )
+                      );
+                    },
+                    title: Text(
+                      "Learn Yoga",
+                      style: GoogleFonts.montserrat(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 24
+                      ),
+                    ),
+                    subtitle: Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 5
+                      ),
+                      child: Text(
+                        "Click here to practice Yoga and lead a healthy lifestyle",
                         style: GoogleFonts.montserrat(
                           fontSize: 15,
                           fontWeight: FontWeight.w300

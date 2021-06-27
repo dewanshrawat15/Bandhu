@@ -59,9 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Icon(
               Icons.people_rounded
-            ),
-            Icon(
-              Icons.headset_mic_rounded
             )
           ],
         )
@@ -149,21 +146,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             icon: Icon(
               Icons.people_rounded
-            )
-          ),
-          BottomNavyBarItem(
-            activeColor: lightThemeColor,
-            inactiveColor: blackColor,
-            title: Center(
-              child: Text(
-                "Discuss",
-                style: GoogleFonts.montserrat(
-                  fontWeight: FontWeight.w500
-                )
-              ),
-            ),
-            icon: Icon(
-              Icons.headset_mic_rounded
             )
           )
         ],
