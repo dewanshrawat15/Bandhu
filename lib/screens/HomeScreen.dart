@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:bandhu/screens/GCchatScreen.dart';
 import 'package:bandhu/screens/ChecklistScreen.dart';
 import 'package:bandhu/screens/ThoughtScreen.dart';
 import 'package:bandhu/screens/QuoteScreen.dart';
@@ -48,7 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
             QuoteScreen(
               userDetails: widget.userDetails
             ),
-            ThoughtScreen(),
+            ThoughtScreen(
+              userDetails: widget.userDetails
+            ),
             ChecklistScreen(
               userDetails: widget.userDetails
             ),

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:bandhu/utils/LoadingScreen.dart';
 import 'package:bandhu/utils/colors.dart';
 import 'package:bandhu/utils/utils.dart';
 
@@ -51,6 +50,17 @@ class _ChecklistScreenState extends State<ChecklistScreen> {
                     ),
                     child: ListTile(
                       tileColor: item['isCompleted'] ? lightThemeColor.withOpacity(0.32) : Colors.transparent,
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => AddEditWatchlistItem(
+                              userDetails: widget.userDetails,
+                              itemDetails: item
+                            )
+                          )
+                        );
+                      },
                       title: Text(
                         item['description'],
                         style: GoogleFonts.montserrat(
@@ -101,7 +111,7 @@ class _ChecklistScreenState extends State<ChecklistScreen> {
                               height: 5,
                             ),
                             Text(
-                              tasksCompleted.toString() + " of " + checklistItems.length.toString(),
+                              tasksCompleted.toString() + " of " + checklistItems.length.toString() + " tasks completed",
                               style: GoogleFonts.montserrat(
                                 color: lightBlackColor,
                                 fontWeight: FontWeight.w500,
@@ -138,7 +148,17 @@ class _ChecklistScreenState extends State<ChecklistScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => print("Push to add/edit watchlist item"),
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => AddEditWatchlistItem(
+                userDetails: widget.userDetails,
+                itemDetails: {}
+              )
+            )
+          );
+        },
         label: Text(
           "Add to-do item",
           style: GoogleFonts.montserrat(

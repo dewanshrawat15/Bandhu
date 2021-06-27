@@ -147,6 +147,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
                 switch (snapshot.connectionState) {
                   case ConnectionState.active:
                     return ListView.builder(
+                      physics: ScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: snapshot.data.docs.length,
                       itemBuilder: (BuildContext context, int index){

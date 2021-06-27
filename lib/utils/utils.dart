@@ -13,7 +13,7 @@ String formatDate(int n){
   }
 }
 
-getDateFromTimestamp(DateTime timestamp){
+String getDateFromTimestamp(DateTime timestamp){
   return formatDate(timestamp.day) + " " + getMonth(timestamp.month) + ", " + timestamp.year.toString();
 }
 
