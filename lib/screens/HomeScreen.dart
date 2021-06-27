@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:bandhu/screens/ChecklistScreen.dart';
 import 'package:bandhu/screens/ThoughtScreen.dart';
 import 'package:bandhu/screens/QuoteScreen.dart';
+import 'package:bandhu/screens/HealthActivity.dart';
 
 class HomeScreen extends StatefulWidget {
   final Map<String, dynamic> userDetails;
@@ -53,8 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ChecklistScreen(
               userDetails: widget.userDetails
             ),
-            Icon(
-              Icons.fitness_center_rounded
+            HealthActivity(
+              userDetails: widget.userDetails
             ),
             Icon(
               Icons.people_rounded

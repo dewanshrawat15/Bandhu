@@ -15,8 +15,11 @@ dependencies:
   cloud_firestore: ^1.0.0
   cupertino_icons: ^1.0.2
   firebase_core: ^1.0.0
+  flare_flutter: ^2.0.6
   google_fonts:
   http:
+  jiffy: ^3.0.1
+  pedometer:
   permission_handler: ^6.0.0
   sawo: ^0.1.0
   
@@ -28,3 +31,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/WaterArtboards.flr

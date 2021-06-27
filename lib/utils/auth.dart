@@ -25,7 +25,12 @@ class AuthHandlerState extends State<AuthHandler> {
   }
 
   Future<void> loginUser(Map<String, dynamic> userData) async {
+    userData['dailyWaterLimit'] = 2500;
     await FirebaseFirestore.instance.collection("users").doc(userData['email']).set(userData);
+    await FirebaseFirestore.instance.collection("pedometer").doc(userData['email']).set({
+      'email': userData['email'],
+      'name': userData['name']
+    });
   }
 
   @override
